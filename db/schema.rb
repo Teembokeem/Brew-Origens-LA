@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20160221023257) do
   create_table "posts", force: :cascade do |t|
     t.string   "tldr"
     t.text     "content"
-    t.string   "rating"
+    t.integer  "rating"
     t.integer  "user_id"
     t.integer  "roast_id"
     t.datetime "created_at", null: false
