@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  respond_to :html, :json
+
   before_action :authorize, except: [:landing, :new, :create]
 
   def landing
@@ -20,13 +22,15 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-  end
-
-  def edit
+  def showedit
+    @user = User.find(params[:id])
   end
 
   def update
+    @user = User.find(params[:id])
+
+    @user.update_attributes(user_params)
+    respond_with @user
   end
 
   def destroy
