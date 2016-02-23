@@ -1,10 +1,13 @@
-<h2>ROASTS</h2>
-
-<p>Find me in app/views/roasts/index.html.erb</p>
-<p>SUP</p>
+<h1>ROASTS</h1>
 <p id="alert"><%= notice %></p>
 
+<% @roasts.each do |roast| %>
+<%= link_to roast_path(roast.id) do %>
+<div class="container-fluid thumbnail row col-md-4">
+<h3><%= roast.name %></h3>
+<h6><%= roast.roaster %></h6>
+<img src= <%= roast.brand_icon_img %>>
 
-
-<%= link_to "Profile", user_path(current_user.id) %>
-
+</div>
+<% end %>
+<% end %>

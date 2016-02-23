@@ -2,6 +2,7 @@ class RoastsController < ApplicationController
   before_action :authorize
 
   def index
+    @roasts = Roast.all
   end
 
   def new
@@ -11,6 +12,8 @@ class RoastsController < ApplicationController
   end
 
   def show
+    @roast = Roast.find(params[:id])
+    @post = Post.new
   end
 
   def edit

@@ -34,12 +34,17 @@
 ![alt text](https://i.imgur.com/NU1TvsF.png)
 ![alt text](https://i.imgur.com/X6Zp2bZ.png)
 ####SUPER USER SETUP
+#####User Class Methods
 ![alt text](https://i.imgur.com/8xRdFlS.png)
 ![alt text](https://i.imgur.com/IJTdJ2d.png)
 ![alt text](https://i.imgur.com/yJwjghl.png)
 ![alt text](https://i.imgur.com/ZogZUoJ.png)
 ![alt text](https://i.imgur.com/El2WS1u.png)
-
+#####Post Class Methods
+![alt text](https://i.imgur.com/EtweglY.png)
+![alt text](https://i.imgur.com/fu3IrQg.png)
+![alt text](https://i.imgur.com/yYDOrvh.png)
+	
 
 
 

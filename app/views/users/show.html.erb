@@ -1,0 +1,14 @@
+<h2>Users#show</h2>
+<p>Find me in app/views/users/show.html.erb</p>
+<p><%= notice %></p>
+
+
+<p>Username: <%= @user.pref_name %></p>
+<p>email: <%= @user.email %></p>
+<img src= <%= @user.profile_img %>>
+
+
+<%= link_to "Users#edit", edit_user_path %>
+
+<%= link_to "Roast#Index", roasts_path %>
+

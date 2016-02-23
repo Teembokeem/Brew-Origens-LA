@@ -16,14 +16,13 @@
 
 
 body {
-/*  background-image: url("https://40.media.tumblr.com/9eb74a21c837567130d827225350ca64/tumblr_nym5mgalwH1sn576ao1_1280.jpg");
+  /*background-image: url("http://www.jono111ca.com/promo/flatsum-html/assets/images/blog/street.jpg");
   background-repeat: no-repeat;
-  background-size: 90%;
-  background-position: center;*/
+  background-size: 100%;*/
   text-align: center;
-  color: rgba(213, 84, 60, 1);
-    font-family: 'Libre Baskerville', serif;
-
+  background-position: fixed;
+  color: rgba(20, 100, 150, 1);
+  font-family: 'Libre Baskerville', serif;
 }
 
 nav {
@@ -36,8 +35,7 @@ ul {
 }
 
 li {
-display: inline;
-padding-left: 20px;
+  display: inline;
 }
 
 #brand {
@@ -46,7 +44,7 @@ padding-left: 20px;
 
 }
 
-h2  {
+h1  {
   font-family: 'Poppins', sans-serif;
   font-size: 114px;
   font-style: bold;
@@ -54,8 +52,38 @@ h2  {
   margin-bottom: 0;
 }
 
-h3  {
+h2  {
   font-size: 54px;
   font-style: italic;
   margin-top: 0;
+
 }
+
+h3  {
+ font-family: 'Poppins', sans-serif;
+  font-style: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h6  {
+  font-style: italic;
+  margin-top: 0;
+}
+
+/*ROAST INDEX*/
+
+.1 {
+
+}
+
+/*ROAST SHOW*/
+.container-fluid {
+  display: block;
+}
+
+.background-overlay {
+  width: 40%;
+}
+
+

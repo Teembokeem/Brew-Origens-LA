@@ -2,27 +2,29 @@
 <html>
 <head>
   <title>B R E W C O D E</title>
-  <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic|Poppins:700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+
 </head>
 <body>
 <nav>
   <ul>
     <li id="brand">BREW ORIGENS LA</li>
-    <li>
-      <% if current_user %>
-        Welcome, <%= current_user.pref_name %>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-        <%= link_to 'Logout', session_path('dummy'), method: :delete %>
-      <% end %>
+    <% if current_user %>
+    <li id="rightlinks">
+      Welcome, <%= current_user.pref_name %>   &nbsp;&nbsp;|&nbsp;&nbsp;
+      <%= link_to 'Logout', session_path('dummy'), method: :delete %> &nbsp;&nbsp;|&nbsp;&nbsp;
+      <%= link_to "Profile", user_path(current_user.id) %>
     </li>
+    <% end %>
   </ul>
 </nav>
 
 <%= yield %>
-
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
 </body>
 </html>

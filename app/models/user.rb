@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :pref_name, presence: true, uniqueness: true
 
-  def self.panel
+  def self.panels
     where(panel: true)
   end
 

@@ -1,2 +1,29 @@
 <h2>Roasts#show</h2>
 <p>Find me in app/views/roasts/show.html.erb</p>
+<div class="container-fluid">
+  <img class="background-overlay" src= <%= @roast.content_img %>>
+
+<h2><%= @roast.name %></h2>
+<h3><%= @roast.roaster %></h3>
+<h3>Flavor: <%= @roast.average_panels_flavor_ratings %></h3>
+<h3>Originality: <%= @roast.average_panels_originality_ratings %></h3>
+
+<h3>Aroma: <%= @roast.average_panels_aroma_ratings %></h3>
+
+<h3>Roast: <%= @roast.average_panels_roast_ratings %></h3>
+<h3>User Rating: <%= @roast.average_regular_ratings %></h3>
+
+<h3><%= @roast.roaster %></h3>
+
+
+</div>
+
+
+
+
+<%= form_for [@roast, @post] do |f| %>
+
+
+<% end %>
+
+<%= link_to "More roasts", roasts_path %>
