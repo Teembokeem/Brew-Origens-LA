@@ -1,19 +1,10 @@
-<h1>Roasts#index</h1>
-<nav>
-  <% if current_user %>
-    Welcome, <%= current_user.pref_name %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Logout', session_path('dummy'), method: :delete %>
-  <% end %>
-</nav>
+<h2>ROASTS</h2>
+
 <p>Find me in app/views/roasts/index.html.erb</p>
-<h2>SUP</h2>
+<p>SUP</p>
 <p id="alert"><%= notice %></p>
-<ul>
-  <li>name: <%= current_user.pref_name %></li>
-  <li>email: <%= current_user.email %></li>
-  <li><%= current_user %></li>
-</ul>
+
+
 
 <%= link_to "Profile", user_path(current_user.id) %>
 

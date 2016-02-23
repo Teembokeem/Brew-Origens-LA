@@ -13,3 +13,49 @@
  *= require_tree .
  *= require_self
  */
+
+
+body {
+/*  background-image: url("https://40.media.tumblr.com/9eb74a21c837567130d827225350ca64/tumblr_nym5mgalwH1sn576ao1_1280.jpg");
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position: center;*/
+  text-align: center;
+  color: rgba(213, 84, 60, 1);
+    font-family: 'Libre Baskerville', serif;
+
+}
+
+nav {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+li {
+display: inline;
+padding-left: 20px;
+}
+
+#brand {
+  font-family: 'Karla', sans-serif;
+  font-size: 40px;
+
+}
+
+h2  {
+  font-family: 'Poppins', sans-serif;
+  font-size: 114px;
+  font-style: bold;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h3  {
+  font-size: 54px;
+  font-style: italic;
+  margin-top: 0;
+}
