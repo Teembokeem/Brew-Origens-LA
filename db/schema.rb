@@ -19,11 +19,15 @@ ActiveRecord::Schema.define(version: 20160221023257) do
   create_table "posts", force: :cascade do |t|
     t.string   "tldr"
     t.text     "content"
-    t.integer  "rating"
+    t.integer  "user_rating"
+    t.float    "flavor_rating"
+    t.float    "originality_rating"
+    t.float    "aroma_rating"
+    t.float    "roast_rating"
     t.integer  "user_id"
     t.integer  "roast_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   add_index "posts", ["roast_id"], name: "index_posts_on_roast_id", using: :btree
@@ -44,6 +48,7 @@ ActiveRecord::Schema.define(version: 20160221023257) do
     t.string   "email"
     t.string   "profile_img"
     t.string   "password_digest"
+    t.boolean  "panel"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
