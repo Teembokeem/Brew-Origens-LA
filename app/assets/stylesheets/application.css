@@ -21,8 +21,8 @@ body {
   background-size: 100%;*/
   text-align: center;
   background-position: fixed;
-  color: rgba(20, 100, 150, 1);
-  font-family: 'Libre Baskerville', serif;
+/*  color: rgba(20, 80, 170, 1);
+*/  font-family: 'Libre Baskerville', serif;
 }
 
 nav {
@@ -50,6 +50,7 @@ h1  {
   font-style: bold;
   margin-top: 0;
   margin-bottom: 0;
+  letter-spacing: 10px;
 }
 
 h2  {
@@ -73,8 +74,9 @@ h6  {
 
 /*ROAST INDEX*/
 
-.1 {
-
+.links {
+  text-decoration: none;
+  color: black;
 }
 
 /*ROAST SHOW*/
@@ -84,5 +86,12 @@ h6  {
 
 .background-overlay {
   width: 40%;
+}
+
+/*ADMIN INDEX*/
+
+.adminstyle {
+  border-bottom: 5px solid black;
+  margin-bottom: 30px;
 }
 

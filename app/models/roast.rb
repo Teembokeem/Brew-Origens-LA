@@ -5,41 +5,57 @@ class Roast < ActiveRecord::Base
   def average_panels_flavor_ratings
       total_rating = 0
       number_of_comments = 0
-        self.posts.panels_posts.each do |c|
+      self.posts.panels_posts.each do |c|
         total_rating += c.flavor_rating
         number_of_comments +=1
       end
-      total_rating/number_of_comments
+      if number_of_comments == 0
+        total_rating = 0
+      else
+        total_rating/number_of_comments
+      end
   end
 
   def average_panels_originality_ratings
       total_rating = 0
       number_of_comments = 0
-        self.posts.panels_posts.each do |c|
+      self.posts.panels_posts.each do |c|
         total_rating += c.originality_rating
         number_of_comments +=1
       end
-      total_rating/number_of_comments
+      if number_of_comments == 0
+        total_rating = 0
+      else
+        total_rating/number_of_comments
+      end
   end
 
   def average_panels_aroma_ratings
       total_rating = 0
       number_of_comments = 0
-        self.posts.panels_posts.each do |c|
+      self.posts.panels_posts.each do |c|
         total_rating += c.aroma_rating
         number_of_comments +=1
       end
-      total_rating/number_of_comments
+      if number_of_comments == 0
+        total_rating = 0
+      else
+        total_rating/number_of_comments
+      end
   end
 
   def average_panels_roast_ratings
       total_rating = 0
       number_of_comments = 0
-        self.posts.panels_posts.each do |c|
+      self.posts.panels_posts.each do |c|
         total_rating += c.roast_rating
         number_of_comments +=1
       end
-      total_rating/number_of_comments
+      if number_of_comments == 0
+        total_rating = 0
+      else
+        total_rating/number_of_comments
+      end
   end
 
   def average_regular_ratings
@@ -49,7 +65,11 @@ class Roast < ActiveRecord::Base
         total_rating += c.user_rating
         number_of_comments +=1
       end
-      total_rating/number_of_comments
+      if number_of_comments == 0
+        total_rating = 0
+      else
+        total_rating/number_of_comments
+      end
   end
 
 private

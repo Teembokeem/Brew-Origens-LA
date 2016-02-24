@@ -1,9 +1,14 @@
-<h1>ROASTS</h1>
+<h1 class="adminstyle">ROASTS ADMIN</h1>
 <p id="alert"><%= notice %></p>
-<div class="container">
 
+
+<h2><%= link_to 'ADD SOME SHIT', new_roast_path %></h2>
+
+<h2>EDIT THIS SHIT</h2>
+
+<div class="container">
 <% @roasts.each do |roast| %>
-<%= link_to roast_path(roast.id) do %>
+<%= link_to edit_roast_path(roast.id) do %>
 <div class="thumbnail col-md-4">
 <h3><%= roast.name %></h3>
 <h6><%= roast.roaster %></h6>

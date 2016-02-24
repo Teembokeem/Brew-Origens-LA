@@ -28,11 +28,6 @@
 ####SESSIONS
 ![alt text](https://i.imgur.com/RuF3ON0.png)
 ![alt text](https://i.imgur.com/7fPbCYb.png)
-####SHOWEDIT with RESPONDER/BEST_IN_PLACE
-![alt text](https://i.imgur.com/SWYvFI6.png)
-![alt text](https://i.imgur.com/zCZW3EV.png)
-![alt text](https://i.imgur.com/NU1TvsF.png)
-![alt text](https://i.imgur.com/X6Zp2bZ.png)
 ####SUPER USER SETUP
 #####User Class Methods
 ![alt text](https://i.imgur.com/8xRdFlS.png)
@@ -53,3 +48,5 @@
 ####INDEX
 ![alt text](https://i.imgur.com/Ejqsj9V.png)
 ![alt text](https://i.imgur.com/kQzMbFp.png)
+####NEW CREATE
+#####NEEDS TO CREATE ADMIN CAPABILITIES

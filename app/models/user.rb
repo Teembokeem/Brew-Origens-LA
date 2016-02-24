@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   def set_default_values
     # Only set if time_zone IS NOT set
     self.panel ||= false
+    self.admin ||= false
   end
 
   has_secure_password
@@ -20,6 +21,10 @@ class User < ActiveRecord::Base
 
   def self.regulars
     where(panel: false)
+  end
+
+  def self.admin
+    where(admin: true)
   end
 
 end

@@ -1,4 +1,6 @@
-<h2>Roasts#show</h2>
+<h1><%= link_to "ROASTS", roasts_path %></h1>
+
+<p><%= notice %></p>
 <p>Find me in app/views/roasts/show.html.erb</p>
 <div class="container-fluid thumbnail col-md-12 panel">
 <img class="background-overlay" src= <%= @roast.content_img %>>
@@ -73,8 +75,4 @@
   <% end %>
 <% end %>
 
-<%= link_to "More roasts", roasts_path %>
-<p><%= notice %></p>
 
-<%= current_user.id %>
-<%= @roast.posts.find_by(user_id: 4).tldr %>

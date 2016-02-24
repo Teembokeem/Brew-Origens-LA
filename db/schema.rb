@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20160221023257) do
     t.string   "profile_img"
     t.string   "password_digest"
     t.boolean  "panel"
+    t.boolean  "admin"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

@@ -13,12 +13,12 @@
 <body>
 <nav>
   <ul>
-    <li id="brand">BREW ORIGENS LA</li>
     <% if current_user %>
+    <li id="brand">BREW ORIGENS LA</li>
     <li id="rightlinks">
       Welcome, <%= current_user.pref_name %>   &nbsp;&nbsp;|&nbsp;&nbsp;
       <%= link_to 'Logout', session_path('dummy'), method: :delete %> &nbsp;&nbsp;|&nbsp;&nbsp;
-      <%= link_to "Profile", user_path(current_user.id) %>
+      <%= link_to "Profile", user_path(current_user.id) %> &nbsp;&nbsp;|&nbsp;&nbsp;
     </li>
     <% end %>
   </ul>

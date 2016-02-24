@@ -1,2 +1,38 @@
-<h1>Roasts#new</h1>
-<p>Find me in app/views/roasts/new.html.erb</p>
+<h1 class="adminstyle"><%= link_to "ROASTS#NEW", adminindex_roasts_path, :class => "links" %></h1>
+
+<h2>New Hype</h2>
+
+
+<%= form_for @roast do |roast| %>
+  <% if @roast.errors.any? %>
+    <div class="error_messages">
+      <h3>Form Incomplete!</h3>
+      <ul>
+        <% for message in @roast.errors.full_messages %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= roast.label :name %>
+    <%= roast.text_field :name %>
+  </div>
+  <div class="field">
+    <%= roast.label :roaster %>
+    <%= roast.text_field :roaster %>
+  </div>
+  <div class="field">
+    <%= roast.label :brand_icon_img %>
+    <%= roast.text_field :brand_icon_img %>
+  </div>
+  <div class="field">
+    <%= roast.label :content_img %>
+    <%= roast.text_field :content_img %>
+  </div>
+  <div class="field">
+    <%= roast.label :price %>
+    <%= roast.text_field :price %>
+  </div>
+  <div class="actions"><%= roast.submit %></div>
+<% end %>

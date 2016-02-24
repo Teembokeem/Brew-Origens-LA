@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   before_action :authorize, except: [:landing, :new, :create]
 
   def landing
-
   end
 
   def new
@@ -40,9 +39,6 @@ class UsersController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def destroy
   end
 
 private
