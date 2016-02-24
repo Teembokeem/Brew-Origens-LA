@@ -1,0 +1,12 @@
+ <%= form_for [@roast, @post] do |f| %>
+    <p>Title: <%= f.text_field :tldr %></p>
+    <% if current_user.panel %>
+      <p>flavor: <%= f.text_field :flavor_rating %></p>
+      <p>Originality: <%= f.text_field :originality_rating %></p>
+      <p>Aroma: <%= f.text_field :aroma_rating %></p>
+      <p>Roast: <%= f.text_field :roast_rating %></p>
+    <% else %>
+    <li>Rating: <%= f.text_field :user_rating %></li>
+    <% end %>
+    <p><%= submit_tag "submit" %></p>
+  <% end %>

@@ -1,4 +1,11 @@
 class User < ActiveRecord::Base
+  after_initialize :set_default_values
+
+  def set_default_values
+    # Only set if time_zone IS NOT set
+    self.panel ||= false
+  end
+
   has_secure_password
 
   has_many :posts

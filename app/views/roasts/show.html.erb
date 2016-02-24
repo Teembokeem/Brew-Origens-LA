@@ -16,12 +16,12 @@
 </div>
 
 
-<div>
+<div class="container-fluid">
   <% @roast.posts.panels_posts.each do |panelpost| %>
-    <div class="container-fluid col-md-5 panel">
-      <div><h2>@ <%= User.find(panelpost.user_id).pref_name %></h2></div>
+    <div class="container-fluid col-md-6 panel">
+      <div><h3>@ <%= User.find(panelpost.user_id).pref_name %></h></div>
       <div>
-        <h3><%= panelpost.tldr %></h3>
+        <h4><%= panelpost.tldr %></h4>
         <p><%= panelpost.content %></p>
       </div>
       <div>
@@ -38,10 +38,10 @@
     </div>
   <% end %>
   <% @roast.posts.regulars_posts.each do |regularpost| %>
-    <div class="container-fluid col-md-5 panel">
-      <div><h2>@ <%= User.find(regularpost.user_id).pref_name %></h2></div>
+    <div class="container-fluid col-md-6 panel">
+      <div><h3>@ <%= User.find(regularpost.user_id).pref_name %></h3></div>
       <div>
-        <h3><strong><%= regularpost.tldr %></strong></h3>
+        <h4><strong><%= regularpost.tldr %></strong></h4>
         <p><%= regularpost.content %></p>
       </div>
       <div>

@@ -17,12 +17,23 @@ class PostsController < ApplicationController
   end
 
   def edit
-
+    @post = Post.find(params[:id])
+    @roast = Roast.find(params[:roast_id])
   end
 
   def update
-
+    @post = Post.find(params[:id])
+    @roast = Roast.find(params[:roast_id])
+    if @post.update_attributes(post_params)
+      flash[:notice] = 'Post was successfully updated.'
+      redirect_to roast_path(@roast.roast_id)
+    else
+      render :edit
+    end
   end
+
+
+
 
 private
   def post_params
@@ -37,4 +48,5 @@ private
                                  :user_id
                                 )
   end
+
 end
