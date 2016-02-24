@@ -1,14 +1,102 @@
+<%= stylesheet_link_tag 'roasts' %>
+<%= javascript_include_tag 'roast' %>
 <h1>ROASTS</h1>
 <p id="alert"><%= notice %></p>
-<div class="container">
-
-<% @roasts.each do |roast| %>
-<%= link_to roast_path(roast.id) do %>
-<div class="thumbnail col-md-4">
-<h3><%= roast.name %></h3>
-<h6><%= roast.roaster %></h6>
-<img src= <%= roast.content_img %>>
-</div>
-<% end %>
-<% end %>
+<div class="containerroast">
+  <div class="main">
+    <div id="mi-slider" class="mi-slider">
+      <ul class="mi-current">
+      <% Roast.all.sort_by(&:average_overall_rating).reverse!.first(3).each  do |roast| %>
+        <li>
+          <a href="#">
+            <%= link_to roast_path(roast.id) do %>
+              <img src=<%= roast.content_img %>>
+            <% end %>
+            <h4>
+              <%= roast.name %>
+            </h4>
+          </a>
+        </li>
+      <% end %>
+      </ul>
+      <ul>
+      <% Roast.all.sort_by(&:average_panels_flavor_ratings).reverse!.first(3).each  do |roast| %>
+        <li>
+          <a href="#">
+            <%= link_to roast_path(roast.id) do %>
+              <img src=<%= roast.content_img %>>
+            <% end %>
+            <h4>
+              <%= roast.name %>
+            </h4>
+          </a>
+        </li>
+      <% end %>
+      </ul>
+      <ul>
+      <% Roast.all.sort_by(&:average_panels_originality_ratings).reverse!.first(3).each  do |roast| %>
+        <li>
+          <a href="#">
+            <%= link_to roast_path(roast.id) do %>
+              <img src=<%= roast.content_img %>>
+            <% end %>
+            <h4>
+              <%= roast.name %>
+            </h4>
+          </a>
+        </li>
+      <% end %>
+      </ul>
+      <ul>
+      <% Roast.all.sort_by(&:average_panels_aroma_ratings).reverse!.first(3).each  do |roast| %>
+        <li>
+          <a href="#">
+            <%= link_to roast_path(roast.id) do %>
+              <img src=<%= roast.content_img %>>
+            <% end %>
+            <h4>
+              <%= roast.name %>
+            </h4>
+          </a>
+        </li>
+      <% end %>
+      </ul>
+      <ul>
+      <% Roast.all.sort_by(&:average_panels_roast_ratings).reverse!.first(3).each  do |roast| %>
+        <li>
+          <a href="#">
+            <%= link_to roast_path(roast.id) do %>
+              <img src=<%= roast.content_img %>>
+            <% end %>
+            <h4>
+              <%= roast.name %>
+            </h4>
+          </a>
+        </li>
+      <% end %>
+      </ul>
+      <ul>
+      <% Roast.all.sort_by(&:average_regular_ratings).reverse!.first(3).each  do |roast| %>
+        <li>
+          <a href="#">
+            <%= link_to roast_path(roast.id) do %>
+              <img src=<%= roast.content_img %>>
+            <% end %>
+            <h4>
+              <%= roast.name %>
+            </h4>
+          </a>
+        </li>
+      <% end %>
+      </ul>
+      <nav>
+        <a href="#" class="mi-selected">The Alphas</a>
+        <a href="#">Flavor</a>
+        <a href="#">Originality</a>
+        <a href="#">Aroma</a>
+        <a href="#">Roast</a>
+        <a href="#">The People's Choice</a>
+      </nav>
+    </div>
+  </div>
 </div>

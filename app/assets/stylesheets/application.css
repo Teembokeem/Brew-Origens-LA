@@ -10,7 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
+ *= require roasts.css
  *= require_self
  */
 
@@ -27,8 +27,15 @@ body {
 
 nav {
   text-align: center;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
+.applicationnavbarul {
+  margin-bottom: 0;
+  height: 100%;
+}
 ul {
   list-style-type: none;
   text-align: center;
@@ -41,6 +48,7 @@ li {
 #brand {
   font-family: 'Karla', sans-serif;
   font-size: 40px;
+  line-height: 60px;
 
 }
 

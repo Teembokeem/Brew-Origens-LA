@@ -72,6 +72,10 @@ class Roast < ActiveRecord::Base
       end
   end
 
+  def average_overall_rating
+    return  (self.average_panels_flavor_ratings + self.average_panels_originality_ratings + self.average_panels_aroma_ratings + self.average_panels_roast_ratings) / 4
+  end
+
 private
 
 end

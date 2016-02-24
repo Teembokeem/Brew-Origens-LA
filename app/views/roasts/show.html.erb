@@ -1,12 +1,10 @@
-<h1><%= link_to "ROASTS", roasts_path %></h1>
-
 <p><%= notice %></p>
-<p>Find me in app/views/roasts/show.html.erb</p>
 <div class="container-fluid thumbnail col-md-12 panel">
+
+<h1><%= @roast.name %></h1>
+<h2><%= @roast.roaster %></h2>
 <img class="background-overlay" src= <%= @roast.content_img %>>
 
-<h2><%= @roast.name %></h2>
-<h3><%= @roast.roaster %></h3>
 <h3>Flavor: <%= @roast.average_panels_flavor_ratings %></h3>
 <h3>Originality: <%= @roast.average_panels_originality_ratings %></h3>
 
@@ -74,5 +72,4 @@
     <p><%= submit_tag "submit" %></p>
   <% end %>
 <% end %>
-
 

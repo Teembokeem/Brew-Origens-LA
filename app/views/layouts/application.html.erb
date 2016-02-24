@@ -8,17 +8,20 @@
   <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic|Poppins:700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= stylesheet_link_tag 'roasts' %>
+
 
 </head>
 <body>
 <nav>
-  <ul>
+  <ul class="applicationnavbarul">
     <% if current_user %>
     <li id="brand">BREW ORIGENS LA</li>
     <li id="rightlinks">
       Welcome, <%= current_user.pref_name %>   &nbsp;&nbsp;|&nbsp;&nbsp;
       <%= link_to 'Logout', session_path('dummy'), method: :delete %> &nbsp;&nbsp;|&nbsp;&nbsp;
       <%= link_to "Profile", user_path(current_user.id) %> &nbsp;&nbsp;|&nbsp;&nbsp;
+      <%= link_to "Roasts", roasts_path %>
     </li>
     <% end %>
   </ul>
@@ -26,5 +29,6 @@
 
 <%= yield %>
   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </body>
 </html>

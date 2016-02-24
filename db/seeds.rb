@@ -72,7 +72,27 @@ alabaster = Roast.create(name: "EL SALVADOR / JAIME GUAVARA",
                            price: 21.00)
 
 
-Post.create(tldr: "Forged from the hands of God himself", content: "Seriously, whoever made this was thinking of the benevolent future of roast and how the tongue could be uplifted to the highest of highs.", flavor_rating: 8.5, originality_rating: 7.2, aroma_rating: 6.7, roast_rating: 9.2, user: teembo, roast: blue_bottle )
-Post.create(tldr: "meh", content: "filler text", user_rating: 5, user: stretch, roast: blue_bottle )
-Post.create(tldr: "Momo :(", content: "filler text", flavor_rating: 3.4, originality_rating: 8.6, aroma_rating: 2.9, roast_rating: 4.1, user: keith, roast: blue_bottle )
-Post.create(tldr: "I got errors again", content: "filler text", user_rating: 5, user: yael, roast: blue_bottle )
+Post.create(tldr: "Forged from the hands of God himself", content: "yum", flavor_rating: 2, originality_rating: 3.5, aroma_rating: 5.5, roast_rating: 8.5, user: teembo, roast: blue_bottle )
+Post.create(tldr: "meh", content: "filler text", user_rating: 10, user: stretch, roast: blue_bottle )
+Post.create(tldr: "Momo :(", content: "filler text", flavor_rating: 2, originality_rating: 2.5, aroma_rating: 5.0, roast_rating: 7.5, user: keith, roast: blue_bottle )
+Post.create(tldr: "I got errors again", content: "filler text", user_rating: 10, user: yael, roast: blue_bottle )
+
+Post.create(tldr: "Forged from the hands of God himself", content: "yum", flavor_rating: 10, originality_rating: 4.5, aroma_rating: 4.5, roast_rating: 7.8, user: teembo, roast: stumptown )
+Post.create(tldr: "meh", content: "filler text", user_rating: 8, user: stretch, roast: stumptown )
+Post.create(tldr: "Momo :(", content: "filler text", flavor_rating: 10, originality_rating: 2.5, aroma_rating: 3.5, roast_rating: 6.8, user: keith, roast: stumptown )
+Post.create(tldr: "I got errors again", content: "filler text", user_rating: 8, user: yael, roast: stumptown )
+
+Post.create(tldr: "Forged from the hands of God himself", content: "yum", flavor_rating: 7, originality_rating: 9.5, aroma_rating: 3.5, roast_rating: 6.4, user: teembo, roast: pig_iron )
+Post.create(tldr: "meh", content: "filler text", user_rating: 6, user: stretch, roast: pig_iron )
+Post.create(tldr: "Momo :(", content: "filler text", flavor_rating: 7, originality_rating: 8.5, aroma_rating: 2.9, roast_rating: 5.9, user: keith, roast: pig_iron )
+Post.create(tldr: "I got errors again", content: "filler text", user_rating: 6, user: yael, roast: pig_iron )
+
+Post.create(tldr: "Forged from the hands of God himself", content: "yum", flavor_rating: 5, originality_rating: 7.5, aroma_rating: 9.2, roast_rating: 6.1, user: teembo, roast: dogwood )
+Post.create(tldr: "meh", content: "filler text", user_rating: 4, user: stretch, roast: dogwood )
+Post.create(tldr: "Momo :(", content: "filler text", flavor_rating: 5, originality_rating: 6.5, aroma_rating: 8.2, roast_rating: 5.2, user: keith, roast: dogwood )
+Post.create(tldr: "I got errors again", content: "filler text", user_rating: 4, user: yael, roast: dogwood )
+
+Post.create(tldr: "Forged from the hands of God himself", content: "yum", flavor_rating: 2.5, originality_rating: 5.5, aroma_rating: 7.5, roast_rating: 5.5, user: teembo, roast: alabaster )
+Post.create(tldr: "meh", content: "filler text", user_rating: 2, user: stretch, roast: alabaster )
+Post.create(tldr: "Momo :(", content: "filler text", flavor_rating: 2.5, originality_rating: 4.5, aroma_rating: 6.5, roast_rating: 4.5, user: keith, roast: alabaster )
+Post.create(tldr: "I got errors again", content: "filler text", user_rating: 2, user: yael, roast: alabaster )
