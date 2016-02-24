@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   #   resources :products
   resources :users, except: [:index]
   resources :roasts do
-    resources :posts, only: [:new, :create, :destroy]
+    resources :posts, only: [:new, :create, :edit, :update, :destroy]
   end
   resources :sessions, only: [:new, :create, :destroy]
   get '/login', to: 'sessions#new'

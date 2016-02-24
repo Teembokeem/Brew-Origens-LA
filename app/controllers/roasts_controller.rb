@@ -20,6 +20,7 @@ class RoastsController < ApplicationController
   end
 
   def update
+
   end
 
   def destroy

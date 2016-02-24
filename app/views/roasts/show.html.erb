@@ -1,7 +1,7 @@
 <h2>Roasts#show</h2>
 <p>Find me in app/views/roasts/show.html.erb</p>
-<div class="container-fluid">
-  <img class="background-overlay" src= <%= @roast.content_img %>>
+<div class="container-fluid thumbnail col-md-12 panel">
+<img class="background-overlay" src= <%= @roast.content_img %>>
 
 <h2><%= @roast.name %></h2>
 <h3><%= @roast.roaster %></h3>
@@ -13,17 +13,66 @@
 <h3>Roast: <%= @roast.average_panels_roast_ratings %></h3>
 <h3>User Rating: <%= @roast.average_regular_ratings %></h3>
 
-<h3><%= @roast.roaster %></h3>
-
-
 </div>
 
 
+<div>
+  <% @roast.posts.panels_posts.each do |panelpost| %>
+    <div class="container-fluid col-md-5 panel">
+      <div><h2>@ <%= User.find(panelpost.user_id).pref_name %></h2></div>
+      <div>
+        <h3><%= panelpost.tldr %></h3>
+        <p><%= panelpost.content %></p>
+      </div>
+      <div>
+        <ul>
+          <li>flavor: <%= panelpost.flavor_rating %></li>
+          <li>Originality: <%= panelpost.originality_rating %></li>
+          <li>Aroma: <%= panelpost.aroma_rating %></li>
+          <li>Roast: <%= panelpost.roast_rating %></li>
+        </ul>
+      </div>
+      <% if panelpost.user_id == current_user.id %>
+        <div><%= link_to "edit this post", edit_roast_post_path(@roast.id, id: panelpost.id) %></div>
+      <% end %>
+    </div>
+  <% end %>
+  <% @roast.posts.regulars_posts.each do |regularpost| %>
+    <div class="container-fluid col-md-5 panel">
+      <div><h2>@ <%= User.find(regularpost.user_id).pref_name %></h2></div>
+      <div>
+        <h3><strong><%= regularpost.tldr %></strong></h3>
+        <p><%= regularpost.content %></p>
+      </div>
+      <div>
+        <ul>
+          <li>flavor: <%= regularpost.user_rating %></li>
+        </ul>
+      </div>
+      <% if regularpost.user_id == current_user.id %>
+        <div><%= link_to "edit this post", edit_roast_post_path(@roast.id, id: regularpost.id) %></div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 
-
-<%= form_for [@roast, @post] do |f| %>
-
-
+<% if !@roast.posts.find_by(user_id: current_user.id) %>
+  <%= form_for [@roast, @post] do |f| %>
+    <p><%= f.text_field :tldr %></p>
+    <% if current_user.panel %>
+      <p>flavor: <%= f.text_field :flavor_rating %></p>
+      <p>Originality: <%= f.text_field :originality_rating %></p>
+      <p>Aroma: <%= f.text_field :aroma_rating %></p>
+      <p>Roast: <%= f.text_field :roast_rating %></p>
+    <% else %>
+    <li>Rating: <%= f.text_field :user_rating %></li>
+    <% end %>
+    <p><%= submit_tag "submit" %></p>
+  <% end %>
 <% end %>
 
 <%= link_to "More roasts", roasts_path %>
+<p><%= notice %></p>
+
+<%= current_user.id %>
+<%= @roast.posts.find_by(user_id: 4).tldr %>
