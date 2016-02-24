@@ -1,6 +1,4 @@
 class PostsController < ApplicationController
-  def new
-  end
 
   def create
     @roast = Roast.find(params[:roast_id])
@@ -11,9 +9,6 @@ class PostsController < ApplicationController
       flash[:notice] = "posted!"
       redirect_to roast_path(@roast)
     end
-  end
-
-  def destroy
   end
 
   def edit
@@ -32,6 +27,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @roast = Roast.find(params[:roast_id])
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to roast_path(@roast.id)
+  end
 
 
 

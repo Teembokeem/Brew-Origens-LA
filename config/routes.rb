@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   resources :users, except: [:index]
-  resources :roasts do
-    resources :posts, only: [:new, :create, :edit, :update, :destroy]
+  resources :roasts, except: [:create, :destroy] do
+    resources :posts, only: [:create, :edit, :update, :destroy]
   end
   resources :sessions, only: [:new, :create, :destroy]
   get '/login', to: 'sessions#new'

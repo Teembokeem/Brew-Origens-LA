@@ -34,6 +34,7 @@
       </div>
       <% if panelpost.user_id == current_user.id %>
         <div><%= link_to "edit this post", edit_roast_post_path(@roast.id, id: panelpost.id) %></div>
+        <div><%= link_to "delete", roast_post_path(@roast.id, id: panelpost.id), data: {:confirm => 'Are you sure?'}, :method => :delete %></div>
       <% end %>
     </div>
   <% end %>
@@ -51,6 +52,7 @@
       </div>
       <% if regularpost.user_id == current_user.id %>
         <div><%= link_to "edit this post", edit_roast_post_path(@roast.id, id: regularpost.id) %></div>
+        <div><%= link_to "delete", roast_post_path(@roast.id, id: regularpost.id), data: {:confirm => 'Are you sure?'}, :method => :delete %></div>
       <% end %>
     </div>
   <% end %>

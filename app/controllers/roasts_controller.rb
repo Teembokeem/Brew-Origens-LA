@@ -14,7 +14,6 @@ class RoastsController < ApplicationController
   def show
     @roast = Roast.find(params[:id])
     @post = Post.new
-
   end
 
   def edit
