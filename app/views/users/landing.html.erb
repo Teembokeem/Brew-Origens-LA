@@ -1,21 +1,43 @@
-<h1>BREW ORIGENS LA</h1>
-<h2>Tl;dr</h2>
-<p>Find me in app/views/users/index.html.erb</p>
-<p>
-  <%= link_to 'Sign Up', new_user_path %>
-</p>
-<p id="alert"><%= alert %></p>
-<p id="alert"><%= notice %></p>
 
-<%= form_tag sessions_path do %>
-  <div>
-    <%= label_tag :email %>
-    <%= text_field_tag :email, params[:email] %>
-  </div>
-  <div>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
-  <div class="actions"><%= submit_tag "Login" %></div>
-<% end %>
 
+<!-- weird stuff -->
+<div id="ip-container" class="ip-container">
+
+  <!-- initial header -->
+  <header class="ip-header">
+      <div class="ip-inner">
+        <h3 class="ip-logo">BREW ORIGINS LA</h3>
+      </div>
+
+    <div class="ip-loader">
+      <svg class="ip-inner" width="60px" height="60px" viewBox="0 0 80 80">
+        <path class="ip-loader-circlebg" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
+        <path id="ip-loader-circle" class="ip-loader-circle" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- main content -->
+  <div class="ip-main">
+    <h1>Hey There</h1>
+    <p>
+      <%= link_to 'Sign Up', new_user_path %>
+    </p>
+    <p id="alert"><%= alert %></p>
+    <p id="alert"><%= notice %></p>
+    <%= form_tag sessions_path do %>
+      <div>
+        <%= label_tag :email %>
+        <%= text_field_tag :email, params[:email] %>
+      </div>
+      <div>
+        <%= label_tag :password %>
+        <%= password_field_tag :password %>
+      </div>
+      <div class="actions"><%= submit_tag "Login" %></div>
+    <% end %>
+  </div>
+</div><!-- /container -->
+<%= stylesheet_link_tag 'landing' %>
+<%= javascript_include_tag :modernizr %>
+<%= javascript_include_tag 'landing' %>

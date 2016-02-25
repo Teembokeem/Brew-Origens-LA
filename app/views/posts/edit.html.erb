@@ -1,4 +1,4 @@
- <%= form_for [@roast, @post] do |f| %>
+ <%= bootstrap_form_for [@roast, @post] do |f| %>
     <p>Title: <%= f.text_field :tldr %></p>
     <% if current_user.panel %>
       <p>flavor: <%= f.text_field :flavor_rating %></p>

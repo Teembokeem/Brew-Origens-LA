@@ -1,18 +1,27 @@
 <%= stylesheet_link_tag 'roasts' %>
 <%= javascript_include_tag 'roast' %>
-<h1>ROASTS</h1>
+<%= javascript_include_tag :modernizr %>
+
 <p id="alert"><%= notice %></p>
 <div class="containerroast">
   <div class="main">
     <div id="mi-slider" class="mi-slider">
+      <nav>
+        <a href="#" class="mi-selected">The Alphas</a>
+        <a href="#">Flavor</a>
+        <a href="#">Originality</a>
+        <a href="#">Aroma</a>
+        <a href="#">Roast</a>
+        <a href="#">The People's Choice</a>
+      </nav>
       <ul class="mi-current">
       <% Roast.all.sort_by(&:average_overall_rating).reverse!.first(3).each  do |roast| %>
         <li>
           <a href="#">
             <%= link_to roast_path(roast.id) do %>
-              <img src=<%= roast.content_img %>>
+              <img class="sliderimg" src=<%= roast.content_img %>>
             <% end %>
-            <h4>
+            <h4 class="slidertext">
               <%= roast.name %>
             </h4>
           </a>
@@ -24,9 +33,9 @@
         <li>
           <a href="#">
             <%= link_to roast_path(roast.id) do %>
-              <img src=<%= roast.content_img %>>
+              <img class="sliderimg" src=<%= roast.content_img %>>
             <% end %>
-            <h4>
+            <h4 class="slidertext">
               <%= roast.name %>
             </h4>
           </a>
@@ -38,9 +47,9 @@
         <li>
           <a href="#">
             <%= link_to roast_path(roast.id) do %>
-              <img src=<%= roast.content_img %>>
+              <img class="sliderimg" src=<%= roast.content_img %>>
             <% end %>
-            <h4>
+            <h4 class="slidertext">
               <%= roast.name %>
             </h4>
           </a>
@@ -52,9 +61,9 @@
         <li>
           <a href="#">
             <%= link_to roast_path(roast.id) do %>
-              <img src=<%= roast.content_img %>>
+              <img class="sliderimg" src=<%= roast.content_img %>>
             <% end %>
-            <h4>
+            <h4 class="slidertext">
               <%= roast.name %>
             </h4>
           </a>
@@ -66,9 +75,9 @@
         <li>
           <a href="#">
             <%= link_to roast_path(roast.id) do %>
-              <img src=<%= roast.content_img %>>
+              <img class="sliderimg" src=<%= roast.content_img %>>
             <% end %>
-            <h4>
+            <h4 class="slidertext">
               <%= roast.name %>
             </h4>
           </a>
@@ -80,23 +89,15 @@
         <li>
           <a href="#">
             <%= link_to roast_path(roast.id) do %>
-              <img src=<%= roast.content_img %>>
+              <img class="sliderimg" src=<%= roast.content_img %>>
             <% end %>
-            <h4>
+            <h4 class="slidertext">
               <%= roast.name %>
             </h4>
           </a>
         </li>
       <% end %>
       </ul>
-      <nav>
-        <a href="#" class="mi-selected">The Alphas</a>
-        <a href="#">Flavor</a>
-        <a href="#">Originality</a>
-        <a href="#">Aroma</a>
-        <a href="#">Roast</a>
-        <a href="#">The People's Choice</a>
-      </nav>
     </div>
   </div>
 </div>

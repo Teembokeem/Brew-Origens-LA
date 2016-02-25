@@ -3,17 +3,16 @@
 <head>
   <title>B R E W C O D E</title>
   <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag :modernizr %>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic|Poppins:700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_link_tag 'roasts' %>
-
-
 </head>
 <body>
-<nav>
+<nav class="ip-logo">
   <ul class="applicationnavbarul">
     <% if current_user %>
     <li id="brand">BREW ORIGENS LA</li>
@@ -21,7 +20,10 @@
       Welcome, <%= current_user.pref_name %>   &nbsp;&nbsp;|&nbsp;&nbsp;
       <%= link_to 'Logout', session_path('dummy'), method: :delete %> &nbsp;&nbsp;|&nbsp;&nbsp;
       <%= link_to "Profile", user_path(current_user.id) %> &nbsp;&nbsp;|&nbsp;&nbsp;
-      <%= link_to "Roasts", roasts_path %>
+      <%= link_to "Roasts", roasts_path %> &nbsp;&nbsp;|&nbsp;&nbsp;
+      <% if current_user.admin %>
+      <%= link_to "Admin Main", adminindex_roasts_path %>
+      <% end %>
     </li>
     <% end %>
   </ul>

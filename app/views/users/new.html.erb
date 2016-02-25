@@ -1,32 +1,34 @@
 <h2>Users#new</h2>
 <p>Find me in app/views/users/new.html.erb</p>
 <h2>Sign Up</h2>
-<%= form_for @user do |user| %>
-  <% if @user.errors.any? %>
-    <div class="error_messages">
-      <h3>Form Incomplete!</h3>
-      <ul>
-        <% for message in @user.errors.full_messages %>
-          <li><%= message %></li>
+<div class="container">
+  <div class="row">
+    <div class=" col-md-4 col-md-offset-4">
+      <%= bootstrap_form_for @user do |user| %>
+        <% if @user.errors.any? %>
+          <div class="error_messages">
+            <h3>Form Incomplete!</h3>
+            <ul>
+              <% for message in @user.errors.full_messages %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
         <% end %>
-      </ul>
+        <div class="field">
+          <%= user.text_field :pref_name, hide_label: true, placeholder: "Name" %>
+        </div>
+        <div class="field">
+          <%= user.text_field :email, hide_label: true, placeholder: "Email" %>
+        </div>
+        <div class="field">
+          <%= user.text_field :password, hide_label: true, placeholder: "Password" %>
+        </div>
+        <div class="field">
+          <%= user.text_field :password_confirmation, hide_label: true, placeholder: "Confirm" %>
+        </div>
+        <div class="actions"><%= user.submit %></div>
+      <% end %>
     </div>
-  <% end %>
-  <div class="field">
-    <%= user.label :pref_name %>
-    <%= user.text_field :pref_name %>
   </div>
-  <div class="field">
-    <%= user.label :email %>
-    <%= user.text_field :email %>
-  </div>
-  <div class="field">
-    <%= user.label :password %>
-    <%= user.text_field :password %>
-  </div>
-  <div class="field">
-    <%= user.label :password_confirmation %>
-    <%= user.text_field :password_confirmation %>
-  </div>
-  <div class="actions"><%= user.submit %></div>
-<% end %>
+</div>

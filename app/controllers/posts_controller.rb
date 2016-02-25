@@ -21,7 +21,7 @@ class PostsController < ApplicationController
     @roast = Roast.find(params[:roast_id])
     if @post.update_attributes(post_params)
       flash[:notice] = 'Post was successfully updated.'
-      redirect_to roast_path(@roast.roast_id)
+      redirect_to roast_path(@roast)
     else
       render :edit
     end

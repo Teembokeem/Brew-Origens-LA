@@ -1,14 +1,41 @@
 <h2>Users#show</h2>
+<%= link_to "Users#edit", edit_user_path %>
+<%= link_to "Roast#Index", roasts_path %>
 <p>Find me in app/views/users/show.html.erb</p>
 <p><%= notice %></p>
 
+<div class="container">
+  <div class="col-md-6 thumbnail">
+    <img src= <%= @user.profile_img %>>
+  </div>
+  <div class="col-md-6">
+    <%= bootstrap_form_for @user do |f| %>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this from being saved</h2>
 
-<p>Username: <%= @user.pref_name %></p>
-<p>email: <%= @user.email %></p>
-<img src= <%= @user.profile_img %>>
+          <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
 
+      <div class="field">
+        <%= f.text_field :pref_name %>
+      </div>
+      <div class="field">
+             <%= f.text_field :email %>
+      </div>
+      <div class="field">
+        <%= f.text_field :profile_img %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<%= link_to "Users#edit", edit_user_path %>
-
-<%= link_to "Roast#Index", roasts_path %>
 
