@@ -29,14 +29,14 @@ stretch = User.create(pref_name: "Stretch",
 
 keith = User.create(pref_name: "Keith",
                     email: "keith@email.com",
-                    profile_img: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAJvAAAAJDFjNzQ0OWY0LTg0YTgtNGJjOS1iZWE4LTNmZTA4YTJhNWNmYQ.jpg",
+                    profile_img: "https://i.imgur.com/Imo6HDt.png",
                     password: "keith",
                     password_confirmation: "keith",
                     panel: true)
 
 yael = User.create(pref_name: "yael",
                    email: "yael@email.com",
-                   profile_img: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/000/2aa/0c5/22efb52.jpg",
+                   profile_img: "https://i.imgur.com/D15PgNW.png",
                    password: "yael",
                    password_confirmation: "yael",
                    panel: false)

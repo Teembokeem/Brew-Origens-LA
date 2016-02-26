@@ -7,11 +7,8 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root "users#landing"
 
-  resources :users, except: [:index, :destroy] do
-    member do
-      get :following,  :followers
-    end
-  end
+  resources :users, except: [ :destroy]
+
   resources :follows, only: [:create, :destroy]
   get '/follow/:id' => 'users#follow'
   get '/unfollow/:id' => 'users#unfollow'

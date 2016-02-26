@@ -11,6 +11,7 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += %w( roasts.css )
 Rails.application.config.assets.precompile += %w( landing.css )
+Rails.application.config.assets.precompile += %w( userindex.css )
 
 Rails.application.config.assets.precompile += %w( roast.js )
 

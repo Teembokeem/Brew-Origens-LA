@@ -1,0 +1,31 @@
+.row {
+  height: 100px;
+  padding-bottom: 10px;
+  vertical-align: middle;
+
+}
+
+.row > .col-md-3 {
+  height: 100%;
+  border: 2px solid rgb(51, 51, 51);
+}
+
+.thumbnail {
+  width: 75px;
+  position: relative;
+  top: 5px;
+}
+
+.username {
+  width: 100px;
+  padding-top: 10px;
+}
+
+h6 {
+  font-family: 'Karla', sans-serif;
+  font-size: 40px;
+}
+
+.stuff {
+  display: none;
+}

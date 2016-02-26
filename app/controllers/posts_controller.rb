@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   def create
     @roast = Roast.find(params[:roast_id])
-    @user = current_user
+    @user = @current_user
     @post = @roast.posts.build post_params
     @post.user_id = current_user.id
     if @post.save

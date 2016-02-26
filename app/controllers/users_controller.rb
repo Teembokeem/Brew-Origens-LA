@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]
   before_action :authorize, except: [:landing, :new, :create]
 
   def landing
+  end
+
+  def index
+    @users = User.all
+    @user = @current_user
   end
 
   def new
@@ -41,12 +45,12 @@ class UsersController < ApplicationController
   end
 
   def follow
-    current_user.follow(params[:id])
+    @current_user.follow(params[:id])
     # redirect_to
   end
 
   def unfollow
-    current_user.unfollow(params[:id])
+    @current_user.unfollow(params[:id])
     # same
   end
 

@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
     following.include?(other_user)
   end
 
-#validation for forms
+#Validation for forms
   validates :email, presence: true,
                     uniqueness: true
   validates :pref_name, presence: true,
