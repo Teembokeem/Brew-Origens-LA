@@ -34,7 +34,6 @@ gem 'bcrypt', '~> 3.1.7'
 #gems
 gem 'bootstrap-sass', '~> 3.2.0'
  gem 'bootstrap_form'
- gem 'will_paginate', '~> 3.0.6'
  gem 'modernizr-rails'
 
 group :development, :test do
