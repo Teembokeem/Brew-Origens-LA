@@ -3,35 +3,54 @@
 
 <h2><%= @roast.name %></h2>
 <h3><%= @roast.roaster %></h3>
-<img src= <%= @roast.content_img %>>
+<img class="dumbnail" src= <%= @roast.content_img %>>
 
-<%= bootstrap_form_for @roast do |roast| %>
-  <% if @roast.errors.any? %>
-    <div class="error_messages">
-      <h3>Form Incomplete!</h3>
-      <ul>
-        <% for message in @roast.errors.full_messages %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+<div class="container-fluid">
+  <div class="row">
+  <%= bootstrap_form_for @roast do |roast| %>
+    <% if @roast.errors.any? %>
+      <div class="col-md-12 error_messages">
+        <h3>Form Incomplete!</h3>
+        <ul>
+          <% for message in @roast.errors.full_messages %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="col-md-4">
+      <div class="field">
+        <%= roast.text_field :name %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="field">
+        <%= roast.text_field :roaster %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="field">
+        <%= roast.text_field :brand_icon_img %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="field">
+        <%= roast.text_field :content_img %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="field">
+        <%= roast.text_field :price %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="actions">
+        <%= roast.submit %>
+      </div>
     </div>
   <% end %>
-  <div class="field">
-    <%= roast.text_field :name %>
   </div>
-  <div class="field">
-    <%= roast.text_field :roaster %>
-  </div>
-  <div class="field">
-    <%= roast.text_field :brand_icon_img %>
-  </div>
-  <div class="field">
-    <%= roast.text_field :content_img %>
-  </div>
-  <div class="field">
-    <%= roast.text_field :price %>
-  </div>
-  <div class="actions"><%= roast.submit %></div>
-<% end %>
+
+</div>
         <div><%= link_to "delete", roast_path(@roast.id), data: {:confirm => 'Are you sure?'}, :method => :delete %></div>
 

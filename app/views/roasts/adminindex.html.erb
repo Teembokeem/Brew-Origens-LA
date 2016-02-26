@@ -1,4 +1,4 @@
-<h1 class="adminstyle">ROASTS ADMIN</h1>
+<h1 class="adminstyle">BREW ORIGENS ADMIN</h1>
 <p id="alert"><%= notice %></p>
 
 
@@ -6,14 +6,16 @@
 
 <h2>EDIT THIS SHIT</h2>
 
-<div class="container">
-<% @roasts.each do |roast| %>
-<%= link_to edit_roast_path(roast.id) do %>
-<div class="thumbnail col-md-4">
-<h3><%= roast.name %></h3>
-<h6><%= roast.roaster %></h6>
-<img src= <%= roast.content_img %>>
-</div>
-<% end %>
-<% end %>
+<div class="container-fluid">
+  <div class="row">
+  <% @roasts.each do |roast| %>
+  <%= link_to edit_roast_path(roast.id) do %>
+    <div class=" col-md-3">
+      <h3><%= roast.name %></h3>
+      <h6><%= roast.roaster %></h6>
+      <img class="dumbnail" src= <%= roast.content_img %>>
+  </div>
+  <% end %>
+  <% end %>
+  </div>
 </div>

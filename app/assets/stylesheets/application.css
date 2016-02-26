@@ -76,6 +76,15 @@ h3  {
   width:200px;
   border-radius:100px;
 }
+
+.profilepic {
+  border-radius: 50%;
+}
+
+.dumbnail {
+  width: 200px;
+
+}
 /*TEXT INPUT FIELDS*/
 .input {
   position: relative;
