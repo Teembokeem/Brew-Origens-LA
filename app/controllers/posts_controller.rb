@@ -2,11 +2,12 @@ class PostsController < ApplicationController
 
   def create
     @roast = Roast.find(params[:roast_id])
-    @user = @current_user
+    @user = current_user
     @post = @roast.posts.build post_params
     @post.user_id = current_user.id
     if @post.save
       flash[:notice] = "posted!"
+      @user.activities.create(action: "posted on #{@roast.name}...'#{@post.tldr}'")
       redirect_to roast_path(@roast)
     end
   end
@@ -17,10 +18,12 @@ class PostsController < ApplicationController
   end
 
   def update
+    @user = current_user
     @post = Post.find(params[:id])
     @roast = Roast.find(params[:roast_id])
     if @post.update_attributes(post_params)
       flash[:notice] = 'Post was successfully updated.'
+      @user.activities.create(action: "edited their post")
       redirect_to roast_path(@roast)
     else
       render :edit
@@ -28,8 +31,10 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @user = current_user
     @roast = Roast.find(params[:roast_id])
     @post = Post.find(params[:id])
+    @user.activities.create(action: "deleted their post: #{@post.tldr}")
     @post.destroy
     redirect_to roast_path(@roast.id)
   end

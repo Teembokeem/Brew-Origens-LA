@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
+      user.activities.create(action: "logged in")
       if user.admin
         redirect_to adminindex_roasts_path
       else

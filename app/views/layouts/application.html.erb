@@ -22,6 +22,7 @@
       <%= link_to 'Logout', session_path('dummy'), method: :delete %> &nbsp;&nbsp;|&nbsp;&nbsp;
       <%= link_to "Profile", user_path(current_user.id) %> &nbsp;&nbsp;|&nbsp;&nbsp;
       <%= link_to "Roasts", roasts_path %> &nbsp;&nbsp;|&nbsp;&nbsp;
+      <%= link_to "Community", users_path %> &nbsp;&nbsp;|&nbsp;&nbsp;
       <% if current_user.admin %>
       <%= link_to "Admin Main", adminindex_roasts_path %>
       <% end %>

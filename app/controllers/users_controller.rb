@@ -38,6 +38,7 @@ class UsersController < ApplicationController
     if @user.update_attributes(user_params)
       session[:user_id] = @user.id
       flash[:notice] = 'Post was successfully updated.'
+      @user.activities.create(action: "updated their profile")
       redirect_to user_path
     else
       render :edit
@@ -45,13 +46,19 @@ class UsersController < ApplicationController
   end
 
   def follow
-    @current_user.follow(params[:id])
-    # redirect_to
+    @target = User.find(params[:id])
+    @current_user.follow(@target)
+    flash[:notice] = "Following #{@target.pref_name}!"
+    @current_user.activities.create(action: "followed #{@target.pref_name}")
+    redirect_to users_path
   end
 
   def unfollow
-    @current_user.unfollow(params[:id])
-    # same
+    @target = User.find(params[:id])
+    @current_user.unfollow(@target)
+    flash[:notice] = "well... #{@target.pref_name} wasnt cool enough anyways...."
+    @current_user.activities.create(action: "unfollowed #{@target.pref_name}")
+    redirect_to user_path(@current_user)
   end
 
 

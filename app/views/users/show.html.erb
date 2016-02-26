@@ -36,6 +36,85 @@
       </div>
     <% end %>
   </div>
+  <div class="row">
+    <div class="col-md-6"><h2>FOLLOWING</h2></div>
+    <div class="col-md-6"><h2>FOLLOWERS</h2></div>
+    <div class="col-md-6">
+      <% @user.following.each do |following| %>
+      <div class="col-md-3 panel" data-toggle="modal" data-target=".<%= following.pref_name%>">
+        <div class="col-md-1">
+          <img class="thumbnail" src= <%= following.profile_img %>>
+        </div>
+        <div class="col-md-1 col-md-offset-3 username">
+          <h5><%= following.pref_name %></h5>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <% @user.followers.each do |follower| %>
+      <div class="col-md-3 panel">
+        <div class="col-md-1">
+          <img class="thumbnail" src= <%= follower.profile_img %>>
+        </div>
+        <div class="col-md-1 col-md-offset-3 username">
+          <h5><%= follower.pref_name %></h5>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
 </div>
+
+<% @user.following.each do |user|  %>
+
+<div class="modal fade <%=user.pref_name%>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Unfollow <%= user.pref_name %>?</h4>
+      </div>
+      <div class="modal-body">
+        <img class="thumbnail center-block" src= <%= user.profile_img %>>
+      </div>
+      <div class="modal-footer">
+        <%= link_to "hello", user_unfollow_path(user.id) %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+<div class="row">
+  <div class="col-md-12"><h2>ACTIVITY FEED</h2></div>
+</div>
+<div class="row">
+  <% count = 1 %>
+  <% @user.following.each do |following| %>
+    <%if following.activities != [] %>
+      <% following.activities.order('created_at desc').each do |another| %>
+        <% count += 1 %>
+        <div class="col-md-8 panel">
+          <div class="col-md-2">
+            <img class="thumbnail" src= <%= following.profile_img %>>
+          </div>
+          <div class="col-md-10 col-md-offset-2 pooper">
+              <h4><%= following.pref_name %> <%= another.action %> &nbsp;&nbsp; <%= time_ago_in_words(another.created_at) %> ago.</h4>
+          </div>
+      </div>
+      <% end %>
+    <% end%>
+  <% end %>
+</div>
+
+
+
+
+
+
+
+<%= stylesheet_link_tag 'userindex' %>
+
 
 

@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   resources :users, except: [ :destroy]
 
   resources :follows, only: [:create, :destroy]
-  get '/follow/:id' => 'users#follow'
-  get '/unfollow/:id' => 'users#unfollow'
+  get '/follow/:id' => 'users#follow', as: :user_follow
+  get '/unfollow/:id' => 'users#unfollow', as: :user_unfollow
 
   get '/adminindex/roasts' => 'roasts#adminindex', as: :adminindex_roasts
 

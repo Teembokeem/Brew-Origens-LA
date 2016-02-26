@@ -29,7 +29,10 @@ class User < ActiveRecord::Base
 
   #Follows a user
   def follow(other_user)
-    active_follows.create(followed_id: other_user.id) unless following?(other_user)
+     if following?(other_user)
+     else
+      active_follows.create(followed_id: other_user.id)
+    end
   end
 
   #Unfollows a user
@@ -39,7 +42,7 @@ class User < ActiveRecord::Base
 
   #Returns true if current user is following the other user
   def following?(other_user)
-    following.include?(other_user)
+    self.following.include?(other_user)
   end
 
 #Validation for forms
