@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
 
 #ERD
   has_many :posts
+  has_many :activities
   has_many :roasts, through: :comments
 
 #Follower logic
@@ -28,12 +29,12 @@ class User < ActiveRecord::Base
 
   #Follows a user
   def follow(other_user)
-    active_follows.create(followed_id: other_user_id)
+    active_follows.create(followed_id: other_user.id) unless following?(other_user)
   end
 
   #Unfollows a user
   def unfollow(other_user)
-    active_follows.find_by(followed_id: other_user_id).destroy
+    active_follows.find_by(followed_id: other_user.id).destroy
   end
 
   #Returns true if current user is following the other user

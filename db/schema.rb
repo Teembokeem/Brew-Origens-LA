@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225014452) do
+ActiveRecord::Schema.define(version: 20160226021317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.string   "action"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "activities", ["user_id"], name: "index_activities_on_user_id", using: :btree
 
   create_table "follows", force: :cascade do |t|
     t.integer  "follower_id"
@@ -65,6 +74,7 @@ ActiveRecord::Schema.define(version: 20160225014452) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "activities", "users"
   add_foreign_key "posts", "roasts"
   add_foreign_key "posts", "users"
 end

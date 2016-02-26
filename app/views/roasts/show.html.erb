@@ -1,18 +1,16 @@
 <p><%= notice %></p>
 <div class="container-fluid thumbnail col-md-12 panel">
+  <h1 class="col-md-12"><%= @roast.name %></h1>
+  <h2 class="col-md-12"><%= @roast.roaster %></h2>
+  <img class="background-overlay" src= <%= @roast.content_img %>>
 
-<h1><%= @roast.name %></h1>
-<h2><%= @roast.roaster %></h2>
-<img class="background-overlay" src= <%= @roast.content_img %>>
+  <h3>Flavor: <%= @roast.average_panels_flavor_ratings %></h3>
+  <h3>Originality: <%= @roast.average_panels_originality_ratings %></h3>
 
-<h3>Flavor: <%= @roast.average_panels_flavor_ratings %></h3>
-<h3>Originality: <%= @roast.average_panels_originality_ratings %></h3>
+  <h3>Aroma: <%= @roast.average_panels_aroma_ratings %></h3>
 
-<h3>Aroma: <%= @roast.average_panels_aroma_ratings %></h3>
-
-<h3>Roast: <%= @roast.average_panels_roast_ratings %></h3>
-<h3>User Rating: <%= @roast.average_regular_ratings %></h3>
-
+  <h3>Roast: <%= @roast.average_panels_roast_ratings %></h3>
+  <h3>User Rating: <%= @roast.average_regular_ratings %></h3>
 </div>
 
 

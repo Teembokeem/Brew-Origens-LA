@@ -13,14 +13,14 @@ class SessionsController < ApplicationController
         redirect_to roasts_path
       end
     else
-      flash.now.alert = 'Invalid credentials, try again :('
+      flash.now.alert = 'NEW?'
       render :template => 'users/landing'
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path, notice: "Logged Out"
+    redirect_to root_path, notice: "DEUCES"
   end
 
 end

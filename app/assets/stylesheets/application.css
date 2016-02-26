@@ -17,13 +17,8 @@
 
 
 body {
-  /*background-image: url("http://www.jono111ca.com/promo/flatsum-html/assets/images/blog/street.jpg");
-  background-repeat: no-repeat;
-  background-size: 100%;*/
   text-align: center;
-  background-position: fixed;
-/*  color: rgba(20, 80, 170, 1);
-*/  font-family: 'Libre Baskerville', serif;
+  font-family: 'Libre Baskerville', serif;
 }
 
 nav {
@@ -60,13 +55,14 @@ h1  {
   margin-top: 0;
   margin-bottom: 0;
   letter-spacing: 10px;
+  color: rgb(51,51,51);
 }
 
 h2  {
   font-size: 54px;
   font-style: italic;
   margin-top: 0;
-
+    color: rgb(51,51,51);
 }
 
 h3  {
@@ -76,9 +72,125 @@ h3  {
   margin-bottom: 0;
 }
 
-h6  {
-  font-style: italic;
-  margin-top: 0;
+/*TEXT INPUT FIELDS*/
+.input {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  margin: 1em;
+  max-width: 350px;
+  width: calc(100% - 2em);
+  vertical-align: bottom;
+}
+
+.input__field {
+  position: relative;
+  display: block;
+  float: right;
+  padding: 0.8em;
+  width: 60%;
+  border: none;
+  border-radius: 0;
+  background: #f0f0f0;
+  color: #aaa;
+  padding-bottom: 20px;
+  -webkit-appearance: none; /* for box shadows to show on iOS */
+}
+
+.input__field:focus {
+  outline: none;
+}
+
+.input__label {
+  display: inline-block;
+  float: right;
+  padding: 0 1em;
+  width: 40%;
+  color: #6a7989;
+  font-size: 50.25%;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.input__label-content {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.input--haruki {
+  margin: 4em 1em 1em;
+}
+
+.input__field--haruki {
+
+  width: 100%;
+  padding: 0 1em;
+  background: transparent;
+  color: white;
+  font-size: 40px;
+}
+
+.input__label--haruki {
+  position: absolute;
+  width: 100%;
+  text-align: left;
+  pointer-events: none;
+}
+
+.input__label-content--haruki {
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  color: white;
+  font-size: 40px;
+  font-family: 'Karla', sans-serif;
+  font-weight: none;
+}
+
+.input__label--haruki::before,
+.input__label--haruki::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 4px;
+  background: white;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+}
+
+.input__label--haruki::before {
+  top: 0;
+}
+
+.input__label--haruki::after {
+  bottom: 0;
+}
+
+.input__field--haruki:focus + .input__label--haruki .input__label-content--haruki,
+.input--filled .input__label-content--haruki {
+  -webkit-transform: translate3d(0, -90%, 0);
+  transform: translate3d(0, -90%, 0);
+}
+
+.input__field--haruki:focus + .input__label--haruki::before,
+.input--filled .input__label--haruki::before {
+  -webkit-transform: translate3d(0, -0.5em, 0);
+  transform: translate3d(0, -0.5em, 0);
+}
+
+.input__field--haruki:focus + .input__label--haruki::after,
+.input--filled .input__label--haruki::after {
+  -webkit-transform: translate3d(0, 0.5em, 0);
+  transform: translate3d(0, 0.5em, 0);
 }
 
 /*ROAST INDEX*/
@@ -86,6 +198,11 @@ h6  {
 .links {
   text-decoration: none;
   color: black;
+}
+
+a, a:hover {
+  text-decoration: none;
+
 }
 
 /*ROAST SHOW*/
@@ -104,3 +221,4 @@ h6  {
   margin-bottom: 30px;
 }
 
+/*BORDER ANIMATIONS*/

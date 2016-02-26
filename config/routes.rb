@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     end
   end
   resources :follows, only: [:create, :destroy]
+  get '/follow/:id' => 'users#follow'
+  get '/unfollow/:id' => 'users#unfollow'
 
   get '/adminindex/roasts' => 'roasts#adminindex', as: :adminindex_roasts
 
@@ -21,7 +23,9 @@ Rails.application.routes.draw do
   end
 
   resources :sessions, only: [:new, :create, :destroy]
-  get '/login', to: 'sessions#new'
+  get '/login' => 'sessions#new'
+
+
 
 
   # Example of regular route:

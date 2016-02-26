@@ -1,7 +1,6 @@
 
-
 <!-- weird stuff -->
-<div id="ip-container" class="ip-container">
+<div id="ip-container" class="ip-container container-fluid">
 
   <!-- initial header -->
   <header class="ip-header">
@@ -19,25 +18,47 @@
 
   <!-- main content -->
   <div class="ip-main">
-    <h1>Hey There</h1>
-    <p>
-      <%= link_to 'Sign Up', new_user_path %>
-    </p>
-    <p id="alert"><%= alert %></p>
-    <p id="alert"><%= notice %></p>
-    <%= form_tag sessions_path do %>
-      <div>
-        <%= label_tag :email %>
-        <%= text_field_tag :email, params[:email] %>
+  <video autoplay loop id="video-background">
+  <source src="https://09-lvl3-pdl.vimeocdn.com/01/4310/3/96550232/257249138.mp4?expires=1456448607&token=09150a1f393a987c9d352#t=10,158" type="video/mp4">
+</video>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h1>H E Y T H E R E</h1>
+       <%= link_to new_user_path, :class => "links" do %>
+          <h2>Here's to however you drink your first cup,</h2>
+        <% end %>
       </div>
-      <div>
-        <%= label_tag :password %>
-        <%= password_field_tag :password %>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <%= form_tag sessions_path do %>
+        <div class="col-md-5 col-md-offset-1">
+          <span class="input input--haruki" >
+            <%= text_field_tag :email, params[:email], :class => "input__field input__field--haruki" %>
+            <label class="input__label input__label--haruki">
+              <span class= "input__label-content input__label-content--haruki">EMAIL</span>
+            </label>
+          </span>
+        </div>
+        <div class="col-md-5 col-md-offset-1">
+          <span class="input input--haruki">
+            <%= password_field_tag :password, nil, :class => "input__field input__field--haruki" %>
+            <label class="input__label input__label--haruki">
+              <span class= "input__label-content input__label-content--haruki">PASSWORD</span>
+            </label>
+          </span>
+        </div>
+          <div class="actions"><%= submit_tag "submit", :style => "display:none" %></div>
+        <% end %>
+        <p id="alert" class="notices"><%= alert %></p>
+        <p id="alert" class="notices"><%= notice %></p>
       </div>
-      <div class="actions"><%= submit_tag "Login" %></div>
-    <% end %>
+    </div>
   </div>
 </div><!-- /container -->
+<%= stylesheet_link_tag 'application' %>
 <%= stylesheet_link_tag 'landing' %>
+
 <%= javascript_include_tag :modernizr %>
 <%= javascript_include_tag 'landing' %>
