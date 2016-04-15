@@ -33,6 +33,7 @@ nav {
 
 .sliderimg {
   vertical-align: top;
+  height: 300px;
 }
 
 .slidertext {
@@ -59,6 +60,8 @@ nav {
 
 .mi-slider ul.mi-current {
   pointer-events: auto;
+  top: 100px;
+  height: 400px;
 }
 
 .mi-slider ul li {
@@ -104,7 +107,6 @@ nav {
 
 .mi-slider nav {
   position: relative;
-  top: 0;
   text-align: center;
   font-style: italic;
   max-width: 1400px;

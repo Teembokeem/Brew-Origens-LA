@@ -6,14 +6,6 @@
 <div class="containerroast">
   <div class="main">
     <div id="mi-slider" class="mi-slider">
-      <nav>
-        <a href="#" class="mi-selected">The Alphas</a>
-        <a href="#">Flavor</a>
-        <a href="#">Originality</a>
-        <a href="#">Aroma</a>
-        <a href="#">Roast</a>
-        <a href="#">The People's Choice</a>
-      </nav>
       <ul class="mi-current">
       <% Roast.all.sort_by(&:average_overall_rating).reverse!.first(3).each  do |roast| %>
         <li>
@@ -98,6 +90,14 @@
         </li>
       <% end %>
       </ul>
+      <nav>
+        <a href="#" class="mi-selected">The Alphas</a>
+        <a href="#">Flavor</a>
+        <a href="#">Originality</a>
+        <a href="#">Aroma</a>
+        <a href="#">Roast</a>
+        <a href="#">The People's Choice</a>
+      </nav>
     </div>
   </div>
 </div>
